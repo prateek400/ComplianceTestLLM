@@ -1,0 +1,26 @@
+# curl https://api.openai.com/v1/chat/completions
+#  -H "Content-Type: application/json"
+#  -H "Authorization: Bearer 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"
+#  -d '{
+#    "model": "gpt-3.5-turbo",
+#    "messages": [{"role": "user", "content": "Hello!"}]
+#  }'
+POST https://api.openai.com/v1/chat/completions
+Authorization: Bearer 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
+Content-Type: application/json
+
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }
+
+###
+
+GET http://localhost:8080/chat?prompt=Hello
+
+### GET request to example server
+GET http://localhost:8080/
+
+###
+GET http://localhost:8080/check-compliance?url=https://mercury.com/
+

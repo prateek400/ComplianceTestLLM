@@ -12,7 +12,7 @@ To set up and run the ComplianceLLM server, follow these steps:
 git clone https://github.com/nishant-singh13/complianceLLM.git
 cd complianceLLM 
 ```
-## 2. Add System Configs
+## 2. Add Environment Variables
 ```console
 OPEN_API_KEY=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
 COMPLIANCE_POLICY_LINK=https://stripe.com/docs/treasury/marketing-treasury

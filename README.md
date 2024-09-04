@@ -14,7 +14,7 @@ cd complianceLLM
 ```
 ## 2. Add Environment Variables
 ```console
-OPEN_API_KEY=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
+OPEN_API_KEY= your api key
 COMPLIANCE_POLICY_LINK=https://stripe.com/docs/treasury/marketing-treasury
 ```
 

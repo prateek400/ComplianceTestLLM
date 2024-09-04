@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
-@RestController
+@RestController()
 @Service
 public class ComplianceController {
 
@@ -28,7 +28,7 @@ public class ComplianceController {
         this.complianceService = complianceService;
     }
 
-    @GetMapping("/check-compliance")
+    @GetMapping("/compliance/check")
     public ResponseEntity<String> checkCompliance(@RequestParam String url) {
         try {
             webService.setUrl(url);

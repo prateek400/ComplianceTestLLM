@@ -2,11 +2,6 @@
 
 ComplianceLLM is a project that provides a compliance checking service using Docker and Docker Compose. This service allows you to input a webpage and verify its content against a compliance policy.
 
-## Prerequisites
-
-- [Docker](https://www.docker.com/products/docker-desktop)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-
 ## Getting Started
 
 To set up and run the ComplianceLLM server, follow these steps:
@@ -17,53 +12,30 @@ To set up and run the ComplianceLLM server, follow these steps:
 git clone https://github.com/nishant-singh13/complianceLLM.git
 cd complianceLLM 
 ```
-
-
-## 2. ADD .env file on you local machine
+## 2. Add System Configs
 ```console
-OPENAI_API_KEY=your open API key
-COMPLIANCE_URL= compliance policy url ... exp : https://stripe.com/docs/treasury/marketing-treasury
+OPEN_API_KEY=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
+COMPLIANCE_POLICY_LINK=https://stripe.com/docs/treasury/marketing-treasury
 ```
 
-## 3. Build and Run with Docker Compose
-Ensure Docker and Docker Compose are installed and running on your system. Then, use Docker Compose to build and start the services:
-
-
+## 2. Build And Run
 ```console
-docker-compose up --build
+./gradlew bootRun
 ```
 
 ## 4. Access the Application
-Once the containers are up, you can access the application at http://localhost:8000 (or whichever port is specified in your docker-compose.yml file).
-Here is swagger link : http://0.0.0.0:8000/docs
+Once the containers are up, you can access the application at http://localhost:8000.\
+Here is swagger link : http://localhost:8080/swagger-ui.html
 
 ## 5. API Usage
 You can interact with the compliance checking API as follows:
 ```console
 
-Endpoint: /compliance/check
-Method: POST
-BODY: 
-{
-  "url": "https://mercury.com/"
-}
-
+Endpoint: /compliance/check?url=https://mercury.com/
+Method: GET
 Response:
-json
-Copy code
-{
-  {
-    "findings": {
-        "HEADING": " RESULT ",
-    }
-}
-}
-```
+String
 
-## 6 . Stopping the Server
-To stop the running Docker containers, use:
-
-
-```console
-docker-compose down
+Sample Res: 
+The webpage content has been reviewed against the compliance policy. It appears to be in line with the compliance standards mentioned in the policy. The content provides clear information about the product and services offered by Mercury, including details about banking, treasury, corporate credit cards, invoicing, and accounting automations. The content also mentions important compliance details such as FDIC insurance, regulated partners, and fraud monitoring. Additionally, the pricing information is clearly stated, and there is transparency about the company being a financial technology company and not an FDIC-insured bank. Overall, the content seems to adhere to the compliance policy.
 ```
